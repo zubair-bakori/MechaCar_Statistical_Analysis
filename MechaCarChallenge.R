@@ -9,3 +9,11 @@ suspCoil_summary
 
 lot_summary <- suspCoil_table %>% group_by(Manufacturing_Lot)%>% summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI))
 lot_summary
+
+t.test(suspCoil_table$PSI, mu=1500)
+
+t.test(subset(suspCoil_table, Manufacturing_Lot=="Lot1")$PSI, mu=1500)
+
+t.test(subset(suspCoil_table, Manufacturing_Lot=="Lot2")$PSI, mu=1500)
+
+t.test(subset(suspCoil_table, Manufacturing_Lot=="Lot3")$PSI, mu=1500)
